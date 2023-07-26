@@ -16,14 +16,14 @@ class Dictionary
         loop do
             index = rand(0..@words.length - 1)
             word = @words[index]
-            break if valid(word, min_length, max_length)
+            break if valid?(word, min_length, max_length)
         end
 
         word
     end
 
-    private def valid(word, min_length, max_length)
-        word.length >= min_length && word.length <= max_length
+    private def valid?(word, min_length, max_length)
+        word.length.between?(min_length, max_length)
     end
 
 end

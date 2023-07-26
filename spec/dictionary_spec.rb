@@ -19,6 +19,10 @@ describe Dictionary do
         it 'should return a variable length valid word' do
             expect(dictionary.word(14, 16).match(/^[a-z]{14,16}$/)).not_to be_nil
         end
+
+        it 'should return a variable word with specific length' do
+            expect(dictionary.word(18, 18).match(/^[a-z]{18}$/)).not_to be_nil
+        end
     end
 
 end
