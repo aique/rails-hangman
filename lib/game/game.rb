@@ -52,7 +52,7 @@ class Game
     end
 
     def winner?
-        if @masked_word.empty?
+        unless @masked_word.instance_of? WordMask
             return false
         end
 
