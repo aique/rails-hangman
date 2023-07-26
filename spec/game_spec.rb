@@ -5,12 +5,13 @@ require 'container'
 
 require 'game/game'
 require 'game/display'
+require 'game/word_mask'
 
 describe Game do
 
     context 'given a new game' do
         game = Container["game"]
-
+        
         it 'word must be empty' do
             expect(game.word).to eq ("")
         end
@@ -20,7 +21,7 @@ describe Game do
         end
 
         it 'should not be any winner' do
-            expect(game.winner).to eq (nil)
+            expect(game.winner?).to eq (false)
         end
     end
 
